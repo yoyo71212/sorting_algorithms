@@ -25,15 +25,18 @@ size_t partition(int *array, size_t size, ssize_t start, ssize_t end)
 				array[i] = array[j];
 				array[j] = temp;
 				print_array((const int *) array, size);
-				j++;
 			}
+			j++;
 		}
 	}
 
-	temp = array[j];
-	array[j] = array[end];
-	array[end] = temp;
-	print_array((const int *) array, size);
+	if (array[j] != array[end])
+	{
+		temp = array[j];
+		array[j] = array[end];
+		array[end] = temp;
+		print_array((const int *) array, size);
+	}
 
 	return (j);
 }
@@ -56,10 +59,7 @@ void helper(int *array, size_t size, ssize_t start, ssize_t end)
 	{
 		pivot = partition(array, size, start, end);
 
-		if (pivot > 0)
-		{
-			helper(array, size, start, pivot - 1);
-		}
+		helper(array, size, start, pivot - 1);
 		helper(array, size, pivot + 1, end);
 	}
 }
