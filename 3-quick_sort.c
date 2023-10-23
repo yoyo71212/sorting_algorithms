@@ -24,7 +24,7 @@ size_t partition(int *array, size_t size, ssize_t start, ssize_t end)
 				temp = array[i];
 				array[i] = array[j];
 				array[j++] = temp;
-				print_array(array, size);
+				print_array((const int *) array, size);
 			}
 		}
 	}
@@ -32,6 +32,7 @@ size_t partition(int *array, size_t size, ssize_t start, ssize_t end)
 	temp = array[j];
 	array[j] = array[end];
 	array[end] = temp;
+	print_array((const int *) array, size);
 
 	return (j);
 }
