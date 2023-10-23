@@ -56,7 +56,10 @@ void helper(int *array, size_t size, ssize_t start, ssize_t end)
 	{
 		pivot = partition(array, size, start, end);
 
-		helper(array, size, start, pivot - 1);
+		if (pivot > 0)
+		{
+			helper(array, size, start, pivot - 1);
+		}
 		helper(array, size, pivot + 1, end);
 	}
 }
