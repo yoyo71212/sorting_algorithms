@@ -19,10 +19,13 @@ size_t partition(int *array, size_t size, ssize_t start, ssize_t end)
 	{
 		if (array[i] < pivot)
 		{
-			temp = array[i];
-			array[i] = array[j];
-			array[j++] = temp;
-			print_array(array, size);
+			if (array[i] != array[j])
+			{
+				temp = array[i];
+				array[i] = array[j];
+				array[j++] = temp;
+				print_array(array, size);
+			}
 		}
 	}
 
