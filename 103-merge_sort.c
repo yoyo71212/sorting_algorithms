@@ -11,7 +11,7 @@
  *
  * Return: void
  */
-void combine(int *array, size_t start, size_t end,int *new_arr)
+void combine(int *array, size_t start, size_t end, int *new_arr)
 {
 	size_t i, j, k, mid;
 
