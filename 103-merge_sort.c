@@ -100,7 +100,7 @@ void merge_sort(int *array, size_t size)
 		new_array[i] = array[i];
 	}
 
-	helper(new_array, 0, size - 1, array);
+	helper(new_array, 0, size, array);
 
 	free(new_array);
 }
