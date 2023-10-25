@@ -2,6 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * combine - Merge two subarrays into one sorted array
+ *
+ * @array: The array
+ * @start: The starting index
+ * @end: The ending index
+ * @new_arr: The resultant array
+ *
+ * Return: void
  */
 void combine(int *array, size_t start, size_t end,int *new_arr)
 {
@@ -16,7 +24,7 @@ void combine(int *array, size_t start, size_t end,int *new_arr)
 	printf("[left]: ");
 	print_array(array + start, mid - start);
 
-	printf("\n[right]: ");
+	printf("[right]: ");
 	print_array(array + mid, end - mid);
 
 	for (k = start; k < end; k++)
@@ -33,9 +41,8 @@ void combine(int *array, size_t start, size_t end,int *new_arr)
 		}
 	}
 
-	printf("\n[Done]: ");
+	printf("[Done]: ");
 	print_array(new_arr + start, end - start);
-	putchar('\n');
 }
 
 /**
@@ -52,7 +59,7 @@ void helper(int *array, size_t start, size_t end, int *new_arr)
 {
 	size_t mid;
 
-	if (start - end < 2)
+	if (end - start < 2)
 	{
 		return;
 	}
