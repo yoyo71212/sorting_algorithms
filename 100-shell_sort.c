@@ -41,16 +41,8 @@ void shell_sort(int *array, size_t size)
 	gap = get_gap(size);
 	while (gap >= 1)
 	{
-		if (gap < 1)
-		{
-			return;
-		}
 		for (j = gap; j < size; j++)
 		{
-			if (gap == 0)
-			{
-				break;
-			}
 			temp = array[j];
 
 			for (k = j; (k > gap - 1) && (array[k - gap] > temp); k -= gap)
