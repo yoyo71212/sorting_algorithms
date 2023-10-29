@@ -33,7 +33,7 @@ void shell_sort(int *array, size_t size)
 	size_t j, k, gap;
 	int temp;
 
-	if (!array || !size)
+	if (!array || !size || size < 2)
 	{
 		return;
 	}
